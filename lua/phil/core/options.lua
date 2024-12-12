@@ -46,8 +46,8 @@ opt.scrolloff = 10
 
 -- turn on termguicolors for tokyonight colorscheme to work
 -- (only iterm2 || other true colour terminal)
- opt.termguicolors = true
- opt.background = "dark"
+opt.termguicolors = true
+opt.background = "dark"
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
@@ -59,8 +59,7 @@ opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.g.have_nerd_font = true
 
 -- backspace
-opt.backspace = "indent, eol, start" -- allow backspace on indent, end of line or insert mode start position
+opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 --clipboard
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
-
