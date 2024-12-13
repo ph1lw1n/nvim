@@ -1,3 +1,2 @@
-require 'phil.core.options' -- Load general options
-require 'phil.core.keymaps' -- Load general keymaps
-require 'phil.lazy'    -- Load general keymaps
+require("phil.core") -- Load core init.lua
+require("phil.lazy") -- Load lazy
