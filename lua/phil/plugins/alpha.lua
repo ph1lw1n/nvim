@@ -92,6 +92,7 @@ return {
             dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
             dashboard.button("e", "  File explorer", "<cmd>NvimTreeToggle<CR>"),
             dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
+            dashboard.button("wr", "󰁯  Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
             dashboard.button("q", "  Quit", ":qa<CR>"),
         }
 
