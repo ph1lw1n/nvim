@@ -3,12 +3,12 @@ vim.cmd("let g:netrw_liststyle = 3")
 local opt = vim.opt
 
 opt.number = true
--- opt.relativenumber = true
+-- opt.relativenumber = true  -- INFO: uncomment for relative numbers
 
 -- tabs & indentation
-opt.tabstop = 4 -- 4 spaces for tabs
-opt.shiftwidth = 4 -- 4 spaces for indent width
-opt.softtabstop = 4
+opt.tabstop = 2 -- 4 spaces for tabs
+opt.shiftwidth = 2 -- 4 spaces for indent width
+opt.softtabstop = 2
 opt.expandtab = true -- expand tab to spaces
 opt.smartindent = true
 opt.autoindent = true -- copy indent from current line when starting new one
@@ -63,3 +63,18 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 
 --clipboard
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+
+-- **Filetype-specific settings**
+-- Create a group for autocommands
+local augroup = vim.api.nvim_create_augroup("FiletypeSettings", { clear = true })
+
+-- Set tabstop=4 for C files
+vim.api.nvim_create_autocmd("FileType", {
+    group = augroup,
+    pattern = "c",
+    callback = function()
+        vim.bo.tabstop = 4
+        vim.bo.shiftwidth = 4
+        vim.bo.softtabstop = 4
+    end,
+})
