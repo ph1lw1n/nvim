@@ -2,6 +2,9 @@
 return {
   'nvim-lualine/lualine.nvim',
   config = function()
+    local lualine = require("lualine")
+    local lazy_status = require("lazy.status")
+
     -- Adapted from: https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/themes/onedark.lua
     local colors = {
       blue = '#61afef',
@@ -100,15 +103,15 @@ return {
     }
 
     -- Setup Lualine
-    require('lualine').setup {
+    lualine.setup {
       options = {
         icons_enabled = true,
         theme = themes[env_var_nvim_theme], -- Set theme based on environment variable
         -- Some useful glyphs:
         -- https://www.nerdfonts.com/cheat-sheet
-        --        
-        section_separators = { left = '', right = '' },
-        component_separators = { left = '', right = '' },
+        --             
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' },
         disabled_filetypes = { 'alpha', 'neo-tree', 'Avante' },
         always_divide_middle = true,
       },
@@ -116,20 +119,28 @@ return {
         lualine_a = { mode },
         lualine_b = { 'branch' },
         lualine_c = { filename },
-        lualine_x = { diagnostics, diff, { 'encoding', cond = hide_in_width }, { 'filetype', cond = hide_in_width } },
-        lualine_y = { 'location' },
-        lualine_z = { 'progress' },
-      },
-      inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { { 'filename', path = 1 } },
-        lualine_x = { { 'location', padding = 0 } },
-        lualine_y = {},
-        lualine_z = {},
-      },
-      tabline = {},
-      extensions = { 'fugitive' },
-    }
-  end,
-}
+        lualine_x = { 
+          {
+            lazy_status.updates,
+            cond = lazy_status.has_updates,
+            color = { fg = "#ff9e64" },
+          },
+          diagnostics, diff, 
+          { 'encoding', cond = hide_in_width }, 
+          { 'filetype', cond = hide_in_width } },
+          lualine_y = { 'location' },
+          lualine_z = { 'progress' },
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { { 'filename', path = 1 } },
+          lualine_x = { { 'location', padding = 0 } },
+          lualine_y = {},
+          lualine_z = {},
+        },
+        tabline = {},
+        extensions = { 'fugitive' },
+      }
+    end,
+  }
