@@ -19,7 +19,7 @@ return {
       group = '+',      -- Use mini.icons equivalent or fallback
     },
 
-    check_mappings = false, -- Suppress health check warnings
+--    check_mappings = false, -- Suppress health check warnings
 
     -- Document existing key chains
     spec = {
@@ -36,6 +36,6 @@ return {
     wk.setup(opts)
 
     -- Register leader mappings based on the spec
-    wk.register(opts.spec, { prefix = '<leader>' })
+    wk.add (opts.spec, { prefix = '<leader>' })
   end,
 }

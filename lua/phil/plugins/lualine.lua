@@ -17,7 +17,7 @@ return {
       gray2 = '#2c323c',
       gray3 = '#3e4452',
     }
-
+    -- Define Onedark Theme
     local onedark_theme = {
       normal = {
         a = { fg = colors.bg, bg = colors.green, gui = 'bold' },
@@ -28,7 +28,7 @@ return {
       insert = { a = { fg = colors.bg, bg = colors.blue, gui = 'bold' } },
       visual = { a = { fg = colors.bg, bg = colors.purple, gui = 'bold' } },
       terminal = { a = { fg = colors.bg, bg = colors.cyan, gui = 'bold' } },
-      replace = { a = { fg = colors.bg, bg = colors.red1, gui = 'bold' } },
+      replace = { a = { fg = colors.bg, bg = colors.red2, gui = 'bold' } },
       inactive = {
         a = { fg = colors.gray1, bg = colors.bg, gui = 'bold' },
         b = { fg = colors.gray1, bg = colors.bg },
@@ -36,13 +36,31 @@ return {
       },
     }
 
+    -- Define Tokyonight Theme
+    local tokyonight_colors = require("tokyonight.colors").setup() -- Get Tokyonight Colors
+    local tokyonight_theme = {
+      normal = {
+        a = { fg = tokyonight_colors.bg, bg = tokyonight_colors.blue, gui = 'bold' },
+        b = { fg = tokyonight_colors.fg, bg = tokyonight_colors.bg_highlight },
+        c = { fg = tokyonight_colors.fg, bg = tokyonight_colors.bg },
+      },
+      insert = { a = { fg = tokyonight_colors.bg, bg = tokyonight_colors.cyan, gui = 'bold' } },
+      visual = { a = { fg = tokyonight_colors.bg, bg = tokyonight_colors.purple, gui = 'bold' } },
+      replace = { a = { fg = tokyonight_colors.bg, bg = tokyonight_colors.red, gui = 'bold' } },
+      inactive = {
+        a = { fg = tokyonight_colors.comment, bg = tokyonight_colors.bg, gui = 'bold' },
+        b = { fg = tokyonight_colors.comment, bg = tokyonight_colors.bg },
+        c = { fg = tokyonight_colors.comment, bg = tokyonight_colors.bg_dark },
+      },
+    }
+
     -- Import color theme based on environment variable NVIM_THEME
-    local env_var_nvim_theme = os.getenv 'NVIM_THEME' or 'nord'
+    local env_var_nvim_theme = os.getenv 'NVIM_THEME' or 'tokyonight'
 
     -- Define a table of themes
     local themes = {
       onedark = onedark_theme,
-      nord = 'nord',
+      tokyonight = tokyonight_theme,
     }
 
     local mode = {
@@ -59,7 +77,7 @@ return {
       path = 0,           -- 0 = just filename, 1 = relative path, 2 = absolute path
     }
 
-    local hide_in_width = function()
+    local hide_in_width = function() -- condition if frame is wide enough
       return vim.fn.winwidth(0) > 100
     end
 
@@ -81,6 +99,7 @@ return {
       cond = hide_in_width,
     }
 
+    -- Setup Lualine
     require('lualine').setup {
       options = {
         icons_enabled = true,
