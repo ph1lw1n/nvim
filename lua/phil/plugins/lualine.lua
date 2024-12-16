@@ -127,7 +127,8 @@ return {
           },
           diagnostics, diff, 
           { 'encoding', cond = hide_in_width }, 
-          { 'filetype', cond = hide_in_width } },
+          { 'filetype' },
+        },
           lualine_y = { 'location' },
           lualine_z = { 'progress' },
         },
@@ -142,5 +143,5 @@ return {
         tabline = {},
         extensions = { 'fugitive' },
       }
-    end,
-  }
+  end,
+}
