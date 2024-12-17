@@ -5,8 +5,8 @@ return {
   opts = {
     indent = {
       --char = '┊',  -- choose a style
-      --char = '▏',
-      char = '⋮',
+      char = '▏',
+      -- char = '⋮',
     },
     scope = {
       show_start = false,
