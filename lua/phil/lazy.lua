@@ -9,7 +9,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("phil.plugins", {
+require("lazy").setup({ { import = "phil.plugins" }, { import = "phil.plugins.lsp" } }, {
   checker = {
     enabled = true,
     notfiy = falce,
