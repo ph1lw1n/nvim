@@ -4,9 +4,10 @@ return {
   main = 'ibl',
   opts = {
     indent = {
-      --char = '┊',  -- choose a style
-      char = '▏',
+      -- char = '┊',  -- choose a style
+      -- char = '▏',
       -- char = '⋮',
+      char = '│',
     },
     scope = {
       show_start = false,
