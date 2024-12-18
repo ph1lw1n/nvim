@@ -4,19 +4,19 @@
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-local keymap = vim.keymap -- for conciseness
+-- For conciseness
+local opts = { noremap = true, silent = true }
+local keymap = vim.keymap
 
 -- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
 keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix List' })
+keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
-
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
@@ -43,8 +43,14 @@ keymap.set("n", "<S-Tab>", "<Cmd>tabprev<CR>") -- Go to previous tab
 -- keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "[P]revious" }) --  go to previous tab
 -- keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "current buffer" }) --  move current buffer to new tab
 
+---- Resize with arrows
+keymap.set('n', '<Up>', ':resize -2<CR>', opts)
+keymap.set('n', '<Down>', ':resize +2<CR>', opts)
+keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
+keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
+
 -- split management
-keymap.set('n', '<leader>ss', '<C-w>v', { desc = "[S]plitsplit" })      -- split window vertically
-keymap.set('n', '<leader>sd', '<C-w>s', { desc = "[D]ownsplit" })      -- split window horizontally
+keymap.set('n', '<leader>ss', '<C-w>v', { desc = "[S]plitsplit" }) -- split window vertically
+keymap.set('n', '<leader>sd', '<C-w>s', { desc = "[D]ownsplit" }) -- split window horizontally
 keymap.set('n', '<leader>se', '<C-w>=', { desc = "[E]qual" })
 keymap.set('n', '<leader>sx', ':close<CR>', { desc = "[x]Close" })
