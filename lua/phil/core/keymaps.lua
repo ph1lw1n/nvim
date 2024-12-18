@@ -34,8 +34,9 @@ keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window'
 keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- tab management
-keymap.set("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "[O]pen" }) -- open new tab
+keymap.set("n", "<leader>tt", "<cmd>tabnew<CR>", { desc = "[T]ab" }) -- open new tab
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "[x]Close" }) -- close current tab
+keymap.set("n", "<leader>to", "<Cmd>tabonly<CR>", { desc = "Close [O]ther Tabs" }) -- Close all other tabs
 keymap.set("n", "<Tab>", "<Cmd>tabnext<CR>" )   -- Go to next tab
 keymap.set("n", "<S-Tab>", "<Cmd>tabprev<CR>") -- Go to previous tab
 -- keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "[N]ext" }) --  go to next tab
