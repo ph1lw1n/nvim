@@ -1,3 +1,4 @@
-require("phil.core.options") -- load general options
-require("phil.core.keymaps") -- load general keymaps
-require("phil.core.snippets") -- load general snippets
+require("phil.core.options")
+require("phil.core.keymaps")
+require("phil.core.snippets")
+require("phil.core.autocommands")
