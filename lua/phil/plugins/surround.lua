@@ -1,20 +1,32 @@
 return {
   "kylechui/nvim-surround",
-  event = { "BufReadPre", "BufNewFile" },
-  version = "*", -- Use for stability; omit to use `main` branch for the latest features
-  config = true,
+  version = "*", -- Use for stability; omit to use the `main` branch for the latest features
+  event = "VeryLazy",
+  config = function()
+    require("nvim-surround").setup({
+      -- Custom configurations go here
+      keymaps = {
+        insert = "<C-s>", -- Key for inserting surround in insert mode
+        insert_line = "<C-S>", -- Key for inserting surround for the whole line in insert mode
+        normal = "ys", -- Key for adding surround in normal mode
+        normal_cur = "yss", -- Key for surrounding the current line
+        delete = "ds", -- Key for deleting surround
+        change = "cs", -- Key for changing surround
+      },
+      surrounds = {
+        -- Add custom surrounds if needed
+      },
+    })
+  end,
 }
-
 
 --[[
 INFO:
-The three "core" operations of add/delete/change can be done: 
-with the keymaps
-ys{motion}{char},
-ds{char}, and
-cs{target}{replacement},
-respectively. For the following examples, 
-* will denote the cursor position: ]]
+The three core operations of add/delete/change:
+ - ys{motion}{char}
+ - ds{char}
+ - cs{target}{replacement}
+ - vS{char}
 
 --[[
  HACK:
