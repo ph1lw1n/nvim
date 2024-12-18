@@ -57,15 +57,15 @@ return {
         keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[S]tring in cwd" })
         keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "string under [C]ursor in cwd" })
         keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[T]odos" })
-        keymap.set("n", "<leader><leader>", "<cmd>Telescope buffers<cr>", { desc = "[ ] Find existing buffers" })
+        keymap.set("n", "<leader><leader>", "<cmd>Telescope buffers<cr>", { desc = "[ ] Buffers" })
 
         keymap.set('n', '<leader>/', function()
             builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false, })
-        end, { desc = '[/] in current buffer' })
+        end, { desc = '[ ] Find in Buffer' })
 
         keymap.set('n', '<leader>f/', function()
             builtin.live_grep { grep_open_files = true, prompt_title = 'Live Grep in Open Files', }
-        end, { desc = '[/] in Open Files' })
+        end, { desc = '[ ] Find in Open Files' })
 
         keymap.set('n', '<leader>fn', function()
             builtin.find_files { cwd = vim.fn.stdpath 'config' }

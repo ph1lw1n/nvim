@@ -14,6 +14,16 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- Diagnostic keymaps
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
+-- Toggle diagnostics
+local diagnostics_active = true
+keymap.set('n', '<leader>xx', function()
+  diagnostics_active = not diagnostics_active
+  if diagnostics_active then
+    vim.diagnostic.enable(0)
+  else
+    vim.diagnostic.disable(0)
+  end
+end,  { desc = "ON/OFF" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
