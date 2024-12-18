@@ -10,6 +10,7 @@ local keymap = vim.keymap
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- Diagnostic keymaps
 keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
