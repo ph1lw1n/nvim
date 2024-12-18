@@ -28,7 +28,9 @@ return {
       { '<leader>g', group = '[G]it' },
       { '<leader>f', group = '[F]ind' },
       { '<leader>t', group = '[T]abs' },
-      { '<leader>w', group = '[W]orking session' },
+      { '<leader>r', group = '[R]ename' },
+      { '<leader>x', group = '[Trouble]' },
+      { '<leader>w', group = '[W]orkspace' },
     },
   },
   config = function(_, opts)

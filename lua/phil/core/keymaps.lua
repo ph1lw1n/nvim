@@ -41,7 +41,7 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "[P]revious" }) --  go t
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "current buffer" }) --  move current buffer to new tab
 
 -- split management
-keymap.set('n', '<leader>v', '<C-w>v', { desc = "verticalsplit" })      -- split window vertically
-keymap.set('n', '<leader>h', '<C-w>s', { desc = "horizontalsplit" })      -- split window horizontally
+keymap.set('n', '<leader>ss', '<C-w>v', { desc = "[S]plitsplit" })      -- split window vertically
+keymap.set('n', '<leader>sd', '<C-w>s', { desc = "[D]ownsplit" })      -- split window horizontally
 keymap.set('n', '<leader>se', '<C-w>=', { desc = "[E]qual" })
 keymap.set('n', '<leader>sx', ':close<CR>', { desc = "[x]Close" })
