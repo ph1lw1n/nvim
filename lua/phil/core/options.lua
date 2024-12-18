@@ -71,10 +71,11 @@ local augroup = vim.api.nvim_create_augroup("FiletypeSettings", { clear = true }
 -- Set tabstop=4 for C files
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup,
-    pattern = "c",
+    pattern = "c, cpp",
     callback = function()
-        vim.bo.tabstop = 4
-        vim.bo.shiftwidth = 4
-        vim.bo.softtabstop = 4
+        opt.expandtab = false     -- Use tabs, not spaces
+        opt.tabstop = 4           -- Set tab width to 4
+        opt.shiftwidth = 4        -- Set indent width to 4
+        opt.softtabstop = 4       -- Backspace respects tab width
     end,
 })
