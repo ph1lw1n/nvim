@@ -16,12 +16,17 @@ keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix lis
 local diagnostics_active = true
 keymap.set('n', '<leader>xx', function()
   diagnostics_active = not diagnostics_active
-  if diagnostics_active then
-    vim.diagnostic.enable(2)
+  local bufnr = vim.api.nvim_get_current_buf() -- Get the current buffer
+  if vim.api.nvim_buf_is_valid(bufnr) then
+    if diagnostics_active then
+      vim.diagnostic.enable(bufnr) -- Enable diagnostics for the current buffer
+    else
+      vim.diagnostic.disable(bufnr) -- Disable diagnostics for the current buffer
+    end
   else
-    vim.diagnostic.disable(2)
+    print("Invalid buffer:", bufnr)
   end
-end,  { desc = "ON/OFF" })
+end, { desc = "ON/OFF diagnostics" })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
