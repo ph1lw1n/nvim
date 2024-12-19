@@ -2,7 +2,8 @@ return {
   "leath-dub/snipe.nvim",
   keys = {
     {
-      "<S-l>",
+      "<leader><leader>",
+      -- "<S-l>", -- uncomment if you wanna use other buffer from keymap
       function()
         require("snipe").open_buffer_menu()
       end,

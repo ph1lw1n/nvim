@@ -57,7 +57,12 @@ return {
         keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[S]tring in cwd" })
         keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "string under [C]ursor in cwd" })
         keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[T]odos" })
-        keymap.set("n", "<leader><leader>", "<cmd>Telescope buffers<cr>", { desc = "[ ] Buffers" })
+        -- keymap.set("n", "<leader><leader>", function()
+        --     require("telescope.builtin").buffers({
+        --         winblend = 10,
+        --         previewer = false,
+        --     })
+        -- end,  { desc = "[ ] Buffers" })
 
         keymap.set('n', '<leader>/', function()
             builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown { winblend = 10, previewer = false, })
