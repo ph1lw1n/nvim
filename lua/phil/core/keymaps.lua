@@ -1,12 +1,10 @@
--- Keymaps for better default experience
-
 -- set leader key
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 -- For conciseness
-local opts = { noremap = true, silent = true }
 local keymap = vim.keymap
+local opts = { noremap = true, silent = true }
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -65,3 +63,6 @@ keymap.set('n', '<leader>ss', '<C-w>v', { desc = "[S]plitsplit" }) -- split wind
 keymap.set('n', '<leader>sd', '<C-w>s', { desc = "[D]ownsplit" }) -- split window horizontally
 keymap.set('n', '<leader>se', '<C-w>=', { desc = "[E]qual" })
 keymap.set('n', '<leader>sx', ':close<CR>', { desc = "[x]Close" })
+
+-- Select all
+keymap.set("n", "<C-a>", "gg<S-v>G")
