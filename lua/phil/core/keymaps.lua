@@ -17,9 +17,9 @@ local diagnostics_active = true
 keymap.set('n', '<leader>xx', function()
   diagnostics_active = not diagnostics_active
   if diagnostics_active then
-    vim.diagnostic.enable(0)
+    vim.diagnostic.enable(2)
   else
-    vim.diagnostic.disable(0)
+    vim.diagnostic.disable(2)
   end
 end,  { desc = "ON/OFF" })
 
@@ -53,10 +53,10 @@ keymap.set("n", "<S-Tab>", "<Cmd>tabprev<CR>") -- Go to previous tab
 -- keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "current buffer" }) --  move current buffer to new tab
 
 ---- Resize with arrows
-keymap.set('n', '<Up>', ':resize -2<CR>', opts)
-keymap.set('n', '<Down>', ':resize +2<CR>', opts)
-keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
-keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
+keymap.set('n', '<Up>', ':resize -1<CR>', opts)
+keymap.set('n', '<Down>', ':resize +3<CR>', opts)
+keymap.set('n', '<Left>', ':vertical resize -1<CR>', opts)
+keymap.set('n', '<Right>', ':vertical resize +3<CR>', opts)
 
 -- split management
 keymap.set('n', '<leader>ss', '<C-w>v', { desc = "[S]plitsplit" }) -- split window vertically
