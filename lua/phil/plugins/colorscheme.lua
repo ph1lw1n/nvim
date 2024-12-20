@@ -1,3 +1,4 @@
+    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
 return {
   'folke/tokyonight.nvim',
   priority = 1000, -- Load this plugin first
