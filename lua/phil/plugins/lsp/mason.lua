@@ -58,8 +58,8 @@ return {
         "shfmt", -- Formatter
 
         -- Web Development
-        "prettier", -- Formatter
-        "eslint_d", -- Linter
+        -- "prettier", -- Formatter
+        -- "eslint_d", -- Linter
 
         -- Add other tools as needed
       },

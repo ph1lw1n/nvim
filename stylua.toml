@@ -1,0 +1,10 @@
+## stylua.toml
+column_width = 100
+indent_type = "Spaces" # Use "Tabs" for tabs
+indent_width = 2
+quote_style = "AutoPreferDouble" # Prefer double quotes, but auto-detect
+line_endings = "Unix" # Use Unix line endings
+no_format_ignore = false
+ luastyle.toml
+indent_type = "Spaces"
+indent_width = 2
