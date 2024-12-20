@@ -23,7 +23,7 @@ return {
       require("toggleterm").setup({
         -- Add any custom setup for toggleterm here
       })
-      vim.keymap.set("n", "<space>td", ":ToggleTerm dir=%:p:h<CR>", { desc = "Terminal" })
+      vim.keymap.set("n", "T", ":ToggleTerm dir=%:p:h<CR>", { desc = "Terminal" })
     end,
   },
 
