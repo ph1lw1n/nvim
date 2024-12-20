@@ -44,6 +44,7 @@ return {
       ensure_installed = {
         -- C/C++ tools
         "clang-format", -- Formatter
+        "cpplint", -- c/c++
 
         -- Python tools
         "black", -- Formatter
@@ -52,6 +53,7 @@ return {
 
         -- Lua tools
         "stylua", -- Formatter
+        "luacheck", -- Linter
 
         -- Shell
         "bash-language-server", -- LSP
