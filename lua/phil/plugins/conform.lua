@@ -22,8 +22,17 @@ return {
       --   lsp_fallback = true,
       -- },
     })
-    -- Set keymap for formatting
-    vim.keymap.set("n", "<leader>F", function()
+
+    -- Filetype-specific keymap for formatting C files
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = { "c", "cpp", "make" },
+      callback = function()
+        vim.keymap.set("n", "<Leader>F", "gg=G", { desc = "[F]ormat", buffer = true })
+      end,
+    })
+
+    -- Global keymap for all other filetypes
+    vim.keymap.set("n", "<Leader>F", function()
       require("conform").format({
         async = true, -- optional, if you want async formatting
       })
