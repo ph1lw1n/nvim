@@ -52,10 +52,10 @@ return {
     local keymap = vim.keymap
     local builtin = require("telescope.builtin")
 
-    keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "[F]iles in cwd" })
-    keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "[R]ecent" })
-    keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "[S]tring in cwd" })
-    keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "string under [C]ursor in cwd" })
+    keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]iles in cwd" })
+    keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[R]ecent" })
+    keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "[S]tring in cwd" })
+    keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "string under [C]ursor in cwd" })
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[T]odos" })
     keymap.set("n", "<leader>fa", function()
       require("telescope.builtin").buffers({
