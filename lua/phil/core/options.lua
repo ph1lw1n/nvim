@@ -19,10 +19,10 @@ opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-opt.mouse = 'a'
+opt.mouse = "a"
 
 -- Keep signcolumn on by default
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 
 -- Decrease update time
 opt.updatetime = 250
@@ -36,7 +36,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Preview substitutions live, as you type!
-opt.inccommand = 'split'
+opt.inccommand = "split"
 
 -- Show which line your cursor is on
 opt.cursorline = true
@@ -53,7 +53,7 @@ opt.background = "dark"
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 opt.list = true
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -70,12 +70,12 @@ local augroup = vim.api.nvim_create_augroup("FiletypeSettings", { clear = true }
 
 -- Set for lua files
 vim.api.nvim_create_autocmd("FileType", {
-    group = augroup,
-    pattern = "lua",
-    callback = function()
-        opt.expandtab = true     -- Use tabs, not spaces
-        opt.tabstop = 2           -- Set tab width to 4
-        opt.shiftwidth = 2        -- Set indent width to 4
-        opt.softtabstop = 2       -- Backspace respects tab width
-    end,
+  group = augroup,
+  pattern = "lua",
+  callback = function()
+    opt.expandtab = true -- Use tabs, not spaces
+    opt.tabstop = 2 -- Set tab width to 4
+    opt.shiftwidth = 2 -- Set indent width to 4
+    opt.softtabstop = 2 -- Backspace respects tab width
+  end,
 })
