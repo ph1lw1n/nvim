@@ -6,10 +6,10 @@ opt.number = true
 -- opt.relativenumber = true  -- INFO: uncomment for relative numbers
 
 -- tabs & indentation
-opt.tabstop = 2 -- 4 spaces for tabs
-opt.shiftwidth = 2 -- 4 spaces for indent width
-opt.softtabstop = 2
-opt.expandtab = true -- expand tab to spaces
+opt.tabstop = 4 -- 4 spaces for tabs
+opt.shiftwidth = 4 -- 4 spaces for indent width
+opt.softtabstop = 4
+opt.expandtab = false -- expand tab to spaces
 opt.smartindent = true
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.wrap = false
@@ -68,14 +68,14 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- Create a group for autocommands
 local augroup = vim.api.nvim_create_augroup("FiletypeSettings", { clear = true })
 
--- Set tabstop=4 for C files
+-- Set for lua files
 vim.api.nvim_create_autocmd("FileType", {
     group = augroup,
-    pattern = "c, cpp",
+    pattern = "lua",
     callback = function()
-        opt.expandtab = false     -- Use tabs, not spaces
-        opt.tabstop = 4           -- Set tab width to 4
-        opt.shiftwidth = 4        -- Set indent width to 4
-        opt.softtabstop = 4       -- Backspace respects tab width
+        opt.expandtab = true     -- Use tabs, not spaces
+        opt.tabstop = 2           -- Set tab width to 4
+        opt.shiftwidth = 2        -- Set indent width to 4
+        opt.softtabstop = 2       -- Backspace respects tab width
     end,
 })

@@ -11,7 +11,7 @@ keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 
 -- Diagnostic keymaps
-keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix list' })
+keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '[Q]uickfix' })
 -- Toggle diagnostics
 local diagnostics_active = true
 keymap.set('n', '<leader>xx', function()
