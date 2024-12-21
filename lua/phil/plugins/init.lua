@@ -1,19 +1,18 @@
 -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 return {
-  "nvim-tree/nvim-web-devicons",  -- Add devicons for file icons
+  "nvim-tree/nvim-web-devicons", -- Add devicons for file icons
 
-  "RRethy/vim-illuminate",  -- Highlighting same words
+  "RRethy/vim-illuminate", -- Highlighting same words
 
-  "nvim-lua/plenary.nvim",  -- Lua functions that many plugins use
+  "nvim-lua/plenary.nvim", -- Lua functions that many plugins use
 
-  "christoomey/vim-tmux-navigator",   -- Tmux & split window navigation
+  "christoomey/vim-tmux-navigator", -- Tmux & split window navigation
 
-  "tpope/vim-sleuth",  -- Detect tabstop and shiftwidth automatically
+  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
-  "tpope/vim-fugitive",  -- Powerful Git integration for Vim
+  "tpope/vim-fugitive", -- Powerful Git integration for Vim
 
-  "tpope/vim-rhubarb",  -- GitHub integration for vim-fugitive
-
+  "tpope/vim-rhubarb", -- GitHub integration for vim-fugitive
   -- Toggle terminal integration
   {
     "akinsho/toggleterm.nvim",
@@ -35,4 +34,3 @@ return {
     end,
   },
 }
-

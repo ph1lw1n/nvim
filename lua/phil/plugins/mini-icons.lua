@@ -1,6 +1,4 @@
 return {
-  {
-    'echasnovski/mini.icons',
+    "echasnovski/mini.icons",
     version = false, -- Always use the latest version
-  },
 }
