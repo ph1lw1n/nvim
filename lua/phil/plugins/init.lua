@@ -1,6 +1,5 @@
 -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 return {
-  "nvim-tree/nvim-web-devicons", -- Add devicons for file icons
 
   "RRethy/vim-illuminate", -- Highlighting same words
 
