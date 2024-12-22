@@ -6,7 +6,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
-    { "j-hui/fidget.nvim", opts = {} },     -- Useful status updates for LSP.
+    { "j-hui/fidget.nvim", opts = {} }, -- Useful status updates for LSP.
   },
   config = function()
     local lspconfig = require("lspconfig")
