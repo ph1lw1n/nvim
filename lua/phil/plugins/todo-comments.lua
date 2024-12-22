@@ -11,11 +11,11 @@ return {
 
     keymap.set("n", "]t", function()
       todo_comments.jump_next()
-    end, { desc = "Next todo comment" })
+    end, { desc = "Next [T]odo" })
 
     keymap.set("n", "[t", function()
       todo_comments.jump_prev()
-    end, { desc = "Previous todo comment" })
+    end, { desc = "Previous [T]odo" })
 
     todo_comments.setup()
   end,

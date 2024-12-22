@@ -1,4 +1,3 @@
--- lua/plugins/nvim-lint.lua
 return {
   "mfussenegger/nvim-lint",
   event = "BufReadPost",
@@ -6,10 +5,10 @@ return {
     require("lint").linters_by_ft = {
       lua = { "luacheck" },
       python = { "flake8" },
-      -- javascript = { "eslint" },
-      -- typescript = { "eslint" },
       c = { "cpplint" }, -- Use cpplint for C
       cpp = { "cpplint" }, -- Use cpplint for C++
+      -- javascript = { "eslint" },
+      -- typescript = { "eslint" },
     }
 
     vim.api.nvim_create_autocmd("BufWritePost", {

@@ -43,8 +43,5 @@ return {
         update_n_lines = "sn", -- Update `n_lines`
       },
     })
-
-    -- Nvim-web-devicons
-    require("nvim-web-devicons").setup({ default = true })
   end,
 }

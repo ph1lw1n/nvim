@@ -8,7 +8,7 @@ return {
       auto_session_suppress_dirs = { "~/", "~/Dev/", "~/Downloads", "~/Documents", "~/Desktop/" },
     })
 
--- set keymaps
+    -- set keymaps
     local keymap = vim.keymap
 
     keymap.set("n", "<leader>wr", "<cmd>SessionRestore<CR>", { desc = "[R]estore session (cwd)" }) -- restore last workspace session for current directory

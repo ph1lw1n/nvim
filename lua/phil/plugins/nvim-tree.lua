@@ -11,7 +11,7 @@ return {
     nvimtree.setup({
       view = {
         width = 35,
-       -- relativenumber = true,
+        -- relativenumber = true,
       },
       -- change folder arrow icons
       renderer = {
@@ -27,9 +27,7 @@ return {
           },
         },
       },
-      -- disable window_picker for
-      -- explorer to work well with
-      -- window splits
+      -- disable window_picker for explorer to work well with window splits
       actions = {
         open_file = {
           window_picker = {
@@ -52,5 +50,5 @@ return {
     keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "current [F]ile" }) -- toggle file explorer on current file
     keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[C]ollapse" }) -- collapse file explorer
     keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[R]efresh" }) -- refresh file explorer
-  end
+  end,
 }

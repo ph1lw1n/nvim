@@ -41,7 +41,7 @@ return {
         -- opts.desc = "See available code actions"
         -- keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)  -- usually your cursor needs to be on top of an error or a suggestion from your LSP for this to activate.
 
-        opts.desc = "Smart rename"
+        opts.desc = "Smart [r]ename"
         keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts) -- smart rename
 
         -- opts.desc = "Show buffer diagnostics"
@@ -50,10 +50,10 @@ return {
         -- opts.desc = "Show line diagnostics"
         -- keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
 
-        opts.desc = "Go to previous diagnostic"
+        opts.desc = "Previous [D]iagnostic"
         keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
 
-        opts.desc = "Go to next diagnostic"
+        opts.desc = "Next [D]iagnostic"
         keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
         opts.desc = "Show documentation for what is under cursor"

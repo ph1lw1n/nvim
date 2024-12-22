@@ -1,4 +1,4 @@
-  -- Highlight, edit, and navigate code
+-- Highlight, edit, and navigate code
 return {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPre", "BufNewFile" },
@@ -11,12 +11,9 @@ return {
     local treesitter = require("nvim-treesitter.configs")
 
     -- configure treesitter
-    treesitter.setup({ -- enable syntax highlighting
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'ruby' }, -- Use regex highlighting for Ruby
-      },
-      indent = { enable = true, disable = { 'ruby' }},  -- Enable indentation, disable for Ruby 
+    treesitter.setup({
+      highlight = { enable = true, additional_vim_regex_highlighting = { "ruby" } }, -- Use regex highlighting for Ruby
+      indent = { enable = true, disable = { "ruby" } }, -- Enable indentation, disable for Ruby
       autotag = { enable = true }, -- enable autotagging
 
       -- ensure these language parsers are installed

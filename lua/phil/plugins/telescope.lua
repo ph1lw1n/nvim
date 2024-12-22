@@ -9,16 +9,18 @@ return {
     { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     { "nvim-telescope/telescope-ui-select.nvim" },
     "folke/todo-comments.nvim",
-    { "BurntSushi/ripgrep", description = "Install ripgrep (system binary)" },
+    { "BurntSushi/ripgrep", description = "Install ripgrep (system binary - brew install)" },
   },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local transform_mod = require("telescope.actions.mt").transform_mod
 
+    -- Optional integration with "trouble.nvim" for diagnostics
     local trouble_ok, trouble = pcall(require, "trouble")
     local trouble_telescope = trouble_ok and require("trouble.sources.telescope") or nil
 
+    -- Custom Telescope actions
     local custom_actions = transform_mod({
       open_trouble_qflist = function(prompt_bufnr)
         if trouble_ok then
@@ -47,6 +49,7 @@ return {
       },
     })
 
+    -- Load Telescope extensions
     pcall(telescope.load_extension, "fzf")
     pcall(telescope.load_extension, "ui-select")
 
@@ -54,27 +57,27 @@ return {
     local keymap = vim.keymap
     local builtin = require("telescope.builtin")
 
-    keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]iles in cwd" })
+    keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]iles (cwd)" })
     keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[R]ecent" })
-    keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "[S]tring in cwd" })
-    keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "string under [C]ursor in cwd" })
+    keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[G]rep (cwd)" })
+    keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "under [C]ursor (cwd)" })
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[T]odos" })
     keymap.set("n", "<leader>fa", function()
-      require("telescope.builtin").buffers({
-        previewer = false,
-      })
+      require("telescope.builtin").buffers({ previewer = false })
     end, { desc = "[A]ll Buffers" })
 
     keymap.set("n", "<leader>/", function()
-      builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({ previewer = false }))
+      builtin.current_buffer_fuzzy_find(
+        require("telescope.themes").get_dropdown({ previewer = false })
+      )
     end, { desc = "Find in Buffer" })
 
     keymap.set("n", "<leader>f/", function()
       builtin.live_grep({ grep_open_files = true, prompt_title = "Live Grep in Open Files" })
-    end, { desc = "Grep in Open Files" })
+    end, { desc = "Grep (Open Files)" })
 
     keymap.set("n", "<leader>fn", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
-    end, { desc = "[N]eovim files" })
+    end, { desc = "[N]eovim Files" })
   end,
 }
