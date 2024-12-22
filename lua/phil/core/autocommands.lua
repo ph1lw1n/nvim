@@ -1,13 +1,13 @@
 -- Highlight when yanking (copying) text
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 -- Create the autocommand with a description and explicit pattern
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
   callback = function()
     vim.highlight.on_yank()
   end,
   group = highlight_group,
-  pattern = '*', -- Explicitly matches all file types
+  pattern = "*", -- Explicitly matches all file types
 })
 
 -- Restore Cursor position
