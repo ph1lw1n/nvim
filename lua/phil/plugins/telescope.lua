@@ -28,6 +28,7 @@ return {
 
     telescope.setup({
       defaults = {
+        winblend = 10,
         path_display = { "smart" },
         mappings = {
           i = {
@@ -59,13 +60,12 @@ return {
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[T]odos" })
     keymap.set("n", "<leader>fa", function()
       require("telescope.builtin").buffers({
-        winblend = 10,
         previewer = false,
       })
     end, { desc = "[A]ll Buffers" })
 
     keymap.set("n", "<leader>/", function()
-      builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({ winblend = 10, previewer = false }))
+      builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({ previewer = false }))
     end, { desc = "Find in Buffer" })
 
     keymap.set("n", "<leader>f/", function()

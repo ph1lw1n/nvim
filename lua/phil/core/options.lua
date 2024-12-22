@@ -21,6 +21,8 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 -- Enable mouse mode, can be useful for resizing splits for example!
 opt.mouse = "a"
 
+opt.winblend = 10 -- all pop up transparency
+
 -- Keep signcolumn on by default
 opt.signcolumn = "yes"
 
