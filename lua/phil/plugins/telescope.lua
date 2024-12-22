@@ -9,6 +9,7 @@ return {
     { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
     { "nvim-telescope/telescope-ui-select.nvim" },
     "folke/todo-comments.nvim",
+    { "BurntSushi/ripgrep", description = "Install ripgrep (system binary)" },
   },
   config = function()
     local telescope = require("telescope")
