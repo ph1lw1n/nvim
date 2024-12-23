@@ -25,9 +25,9 @@ return {
     -- Mason LSPConfig setup: Install and configure LSP servers
     mason_lspconfig.setup({
       ensure_installed = {
-        "clangd", -- C/C++
-        "lua_ls", -- Lua
-        "bashls", -- Bash
+        -- "clangd", -- C/C++
+        -- "lua_ls", -- Lua
+        -- "bashls", -- Bash
         -- "pyright", -- Python
         -- "jsonls", -- JSON
         -- "yamlls", -- YAML
@@ -42,22 +42,22 @@ return {
     -- Mason Tool Installer setup: Install formatters, linters, and other tools
     mason_tool_installer.setup({
       ensure_installed = {
-        -- C/C++ tools
-        "clang-format", -- Formatter
-        "cpplint", -- c/c++
+        -- -- C/C++ tools
+        -- "clang-format", -- Formatter
+        -- "cpplint", -- c/c++
 
         -- -- Python tools
         -- "black", -- Formatter
         -- "isort", -- import sorter
         -- "pylint", -- Linter
 
-        -- Lua tools
-        "stylua", -- Formatter
-        "luacheck", -- Linter
+        -- -- Lua tools
+        -- "stylua", -- Formatter
+        -- "luacheck", -- Linter
 
-        -- Shell
-        "bash-language-server", -- LSP
-        "shfmt", -- Formatter
+        -- -- Shell
+        -- "bash-language-server", -- LSP
+        -- "shfmt", -- Formatter
 
         -- Web Development
         -- "prettier", -- Formatter
