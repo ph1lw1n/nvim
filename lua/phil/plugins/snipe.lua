@@ -7,7 +7,7 @@ return {
       function()
         require("snipe").open_buffer_menu()
       end,
-      desc = "Search Buffer",
+      desc = "Bufferlist",
     },
   },
   config = function()

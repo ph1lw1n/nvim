@@ -31,6 +31,7 @@ return {
       { "<leader>r", group = "[R]ename" },
       { "<leader>x", group = "[Trouble]" },
       { "<leader>w", group = "[W]orkspace" },
+      { "<leader>/", group = "Comment" },
     },
   },
   config = function(_, opts)

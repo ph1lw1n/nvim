@@ -66,15 +66,15 @@ return {
       require("telescope.builtin").buffers({ previewer = false })
     end, { desc = "[A]ll Buffers" })
 
-    keymap.set("n", "<leader>/", function()
+    keymap.set("n", "<leader>b", function()
       builtin.current_buffer_fuzzy_find(
         require("telescope.themes").get_dropdown({ previewer = false })
       )
-    end, { desc = "Find in Buffer" })
+    end, { desc = "Search [B]uffer" })
 
-    keymap.set("n", "<leader>f/", function()
+    keymap.set("n", "<leader>fo", function()
       builtin.live_grep({ grep_open_files = true, prompt_title = "Live Grep in Open Files" })
-    end, { desc = "Grep (Open Files)" })
+    end, { desc = "Grep [O]pen Files" })
 
     keymap.set("n", "<leader>fn", function()
       builtin.find_files({ cwd = vim.fn.stdpath("config") })
