@@ -4,7 +4,7 @@ return {
   config = function()
     require("lint").linters_by_ft = {
       lua = { "luacheck" },
-      python = { "flake8" },
+      -- python = { "flake8" },
       c = { "cpplint" }, -- Use cpplint for C
       cpp = { "cpplint" }, -- Use cpplint for C++
       -- javascript = { "eslint" },
