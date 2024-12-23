@@ -5,6 +5,9 @@ return {
     -- Mini Icons
     require("mini.icons").setup()
 
+    -- Mini Animate
+    require("mini.animate").setup()
+
     -- Better Around/Inside textobjects
     --
     -- Examples:
