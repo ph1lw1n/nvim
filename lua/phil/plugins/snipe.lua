@@ -17,7 +17,7 @@ return {
         dictionary = "asdfghl;wertyuiop", -- Characters to use for hints
       },
       navigate = {
-        cancel_snipe = "q", -- Cancel navigation
+        cancel_snipe = { "q", "<Esc>" }, -- Cancel navigation
         close_buffer = "x", -- Close the buffer
       },
       sort = "default", -- Sort buffers by default order
