@@ -7,5 +7,5 @@ return {
   "tpope/vim-fugitive", -- Powerful Git integration for Vim
   "tpope/vim-rhubarb", -- GitHub integration for vim-fugitive
   "stevearc/dressing.nvim", -- UI for improved prompts and input
-  { "norcalli/nvim-colorizer.lua", opts = {} }, -- High-performance color highlighter
+  "norcalli/nvim-colorizer.lua", -- High-performance color highlighter
 }
