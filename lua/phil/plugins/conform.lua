@@ -7,7 +7,7 @@ return {
 
       formatters_by_ft = {
         lua = { "stylua" },
-        python = { "black" },
+        -- python = { "black" },
         -- javascript = { "prettier" },
         -- typescript = { "prettier" },
 
@@ -30,6 +30,22 @@ return {
         vim.keymap.set("n", "<Leader>F", "gg=G", { desc = "[F]ormat", buffer = true })
       end,
     })
+
+    -- -- Custom command for clang-format (need to create .clang-format file in nvim directory)
+    -- vim.api.nvim_create_autocmd("FileType", {
+    --   pattern = { "c", "cpp" },
+    --   callback = function()
+    --     vim.keymap.set("n", "<Leader>F", function()
+    --       require("conform").format({
+    --         lsp_fallback = false,
+    --         extra_args = {
+    --           "--style=file",
+    --           "--assume-filename=" .. vim.fn.stdpath("config") .. "/.clang-format",
+    --         },
+    --       })
+    --     end, { desc = "[F]ormat C/C++ with custom .clang-format", buffer = true })
+    --   end,
+    -- })
 
     -- Global keymap for all other filetypes
     vim.keymap.set("n", "<Leader>F", function()

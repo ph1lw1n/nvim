@@ -1,0 +1,12 @@
+---
+BasedOnStyle: Google  # You can use "LLVM", "Google", "Chromium", "Mozilla", etc., as a base style
+IndentWidth: 4        # Matches shiftwidth (spaces for each level of indentation)
+TabWidth: 4           # Matches tabstop (visual size of a tab character)
+UseTab: Always        # Use tabs instead of spaces for indentation
+BreakBeforeBraces: Allman # Place braces on a new line
+AllowShortFunctionsOnASingleLine: Empty # Only allow empty functions on a single line
+ColumnLimit: 0        # Disable line wrapping to match wrap = false
+DerivePointerAlignment: false
+PointerAlignment: Left # Style pointer alignment (e.g., `int* x` instead of `int *x`)
+...
+

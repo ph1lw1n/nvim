@@ -26,14 +26,14 @@ return {
     mason_lspconfig.setup({
       ensure_installed = {
         "clangd", -- C/C++
-        "pyright", -- Python
         "lua_ls", -- Lua
         "bashls", -- Bash
-        "jsonls", -- JSON
-        "yamlls", -- YAML
-        "dockerls", -- Docker
-        "cssls", -- CSS
-        "html", -- HTML
+        -- "pyright", -- Python
+        -- "jsonls", -- JSON
+        -- "yamlls", -- YAML
+        -- "dockerls", -- Docker
+        -- "cssls", -- CSS
+        -- "html", -- HTML
         -- "tsserver", -- Typescript / JaveScript
         -- Add other servers as needed
       },
@@ -46,10 +46,10 @@ return {
         "clang-format", -- Formatter
         "cpplint", -- c/c++
 
-        -- Python tools
-        "black", -- Formatter
-        "isort", -- import sorter
-        "pylint", -- Linter
+        -- -- Python tools
+        -- "black", -- Formatter
+        -- "isort", -- import sorter
+        -- "pylint", -- Linter
 
         -- Lua tools
         "stylua", -- Formatter
