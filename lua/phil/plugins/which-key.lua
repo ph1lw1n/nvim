@@ -30,6 +30,7 @@ return {
       { "<leader>t", group = "[T]abs" },
       { "<leader>r", group = "[R]ename" },
       { "<leader>x", group = "[Trouble]" },
+      { "<leader>h", group = "[H]unk" },
       { "<leader>w", group = "[W]orkspace" },
       { "<leader>/", group = "Comment" },
     },

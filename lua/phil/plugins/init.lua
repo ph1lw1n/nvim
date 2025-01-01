@@ -8,4 +8,5 @@ return {
   "tpope/vim-rhubarb", -- GitHub integration for vim-fugitive
   "stevearc/dressing.nvim", -- UI for improved prompts and input
   "norcalli/nvim-colorizer.lua", -- High-performance color highlighter
+  "tummetott/unimpaired.nvim",
 }
