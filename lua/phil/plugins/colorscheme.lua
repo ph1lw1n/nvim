@@ -4,10 +4,10 @@ return {
   priority = 1000, -- Load this plugin first
   opts = {
     style = "night", -- Theme style
-    transparent = false, -- Set transparency (adjust as needed)
+    transparent = true, -- Set transparency (adjust as needed)
     styles = {
-      sidebars = "dark", -- Sidebar style
-      floats = "dark", -- Floating window style
+      sidebars = "transparent", -- Sidebar style transparent / dark
+      floats = "transparent", -- Floating window style
     },
   },
   config = function(_, opts)
@@ -18,6 +18,6 @@ return {
     vim.cmd.colorscheme("tokyonight-night")
 
     -- Customize highlights (example: make comments not italic)
-    vim.cmd.hi("Comment gui=none")
+    vim.api.nvim_set_hl(0, "Comment", { italic = false })
   end,
 }
