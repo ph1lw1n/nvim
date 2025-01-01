@@ -5,7 +5,7 @@ return {
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
+    { "folke/lazydev.nvim", opts = {} },
     { "j-hui/fidget.nvim", opts = {} }, -- Useful status updates for LSP.
   },
   config = function()
