@@ -53,6 +53,7 @@ return {
     pcall(telescope.load_extension, "fzf")
     pcall(telescope.load_extension, "ui-select")
     pcall(telescope.load_extension, "neoclip")
+    pcall(telescope.load_extension, "undotree")
 
     -- Set keymaps
     local keymap = vim.keymap
