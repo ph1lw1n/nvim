@@ -52,6 +52,7 @@ return {
     -- Load Telescope extensions
     pcall(telescope.load_extension, "fzf")
     pcall(telescope.load_extension, "ui-select")
+    pcall(telescope.load_extension, "neoclip")
 
     -- Set keymaps
     local keymap = vim.keymap
