@@ -47,7 +47,8 @@ return {
     local keymap = vim.keymap -- for conciseness
 
     keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "[E]xplorer" }) -- toggle file explorer
-    keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "current [F]ile" }) -- toggle file explorer on current file
+    keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "current [F]ile (cwd)" }) -- toggle file explorer on current file
+    keymap.set("n", "<leader>eF", "<cmd>NvimTreeFindFileToggle!<CR>", { desc = "current [F]ile" }) -- toggle file explorer on current file
     keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "[C]ollapse" }) -- collapse file explorer
     keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "[R]efresh" }) -- refresh file explorer
   end,
