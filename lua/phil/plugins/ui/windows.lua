@@ -25,4 +25,9 @@ return {
       { "<leader>sm", "<cmd>MaximizerToggle<CR>", desc = "[M]ax/[M]in" },
     },
   },
+
+  -- Tmux & split window navigation
+  {
+    "christoomey/vim-tmux-navigator",
+  },
 }
