@@ -16,6 +16,7 @@ require("lazy").setup({
   { import = "phil.plugins.lsp" },
   { import = "phil.plugins.ui" },
   { import = "phil.plugins.git" },
+  { import = "phil.plugins.debug" },
   { import = "phil.plugins.tools" },
   { import = "phil.plugins.filemanagement" },
 }, {
