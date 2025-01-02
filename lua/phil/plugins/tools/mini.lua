@@ -2,13 +2,13 @@ return {
   "echasnovski/mini.nvim",
   version = false, -- Always use the latest version
   config = function()
-
     -- ----------------------------------------------------------------------------
+
+    -- Highlight patterns in text
+    require("mini.hipatterns").setup()
 
     -- Mini Icons
     require("mini.icons").setup()
-
-    -- ----------------------------------------------------------------------------
 
     -- Mini Animate
     require("mini.animate").setup()
