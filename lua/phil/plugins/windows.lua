@@ -1,5 +1,6 @@
--- Split window management
+-- Split window management and maximization
 return {
+  -- Windows.nvim plugin for split window adjustments
   {
     "anuvyklack/windows.nvim",
     dependencies = {
@@ -16,10 +17,12 @@ return {
       require("windows").setup()
     end,
   },
-},
-{
-  "szw/vim-maximizer",
-  keys = {
-    { "<leader>sm", "<cmd>MaximizerToggle<CR>", desc = "[M]ax/[M]in" },
+
+  -- Vim-maximizer plugin for toggling window maximization
+  {
+    "szw/vim-maximizer",
+    keys = {
+      { "<leader>sm", "<cmd>MaximizerToggle<CR>", desc = "[M]ax/[M]in" },
+    },
   },
 }
