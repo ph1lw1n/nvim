@@ -29,6 +29,7 @@ return {
       { "<leader>f", group = "[F]ind" },
       { "<leader>t", group = "[T]abs" },
       { "<leader>r", group = "[R]ename" },
+      { "<leader>d", group = "[D]ebug" },
       { "<leader>x", group = "[Trouble]" },
       { "<leader>h", group = "[H]unk" },
       { "<leader>w", group = "[W]orkspace" },
