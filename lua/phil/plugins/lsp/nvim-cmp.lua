@@ -21,6 +21,16 @@ return {
     -- Load vscode-style snippets from installed plugins (e.g., friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
 
+    -- Access tokyonight's color palette
+    local colors = require("tokyonight.colors").setup()
+
+    -- Use colors from the palette
+    vim.api.nvim_set_hl(0, "Pmenu", { bg = colors.bg, fg = colors.fg, blend = 20 })
+    vim.api.nvim_set_hl(0, "PmenuSel", { bg = colors.bg_highlight, fg = colors.fg })
+    vim.api.nvim_set_hl(0, "PmenuBorder", { fg = colors.border })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = colors.bg_float, blend = 20 })
+    vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.border })
+
     cmp.setup({
       completion = {
         completeopt = "menu,menuone,preview,noselect",
