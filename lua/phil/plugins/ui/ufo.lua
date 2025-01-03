@@ -2,8 +2,8 @@ return {
   "kevinhwang91/nvim-ufo",
   dependencies = "kevinhwang91/promise-async",
   config = function()
-    vim.o.foldcolumn = "1" -- '0' is not bad
-    vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+    vim.o.foldcolumn = "0" -- Show fold column
+    vim.o.foldlevel = 99 -- Keep all folds open initially
     vim.o.foldlevelstart = 99
     vim.o.foldenable = true
 
@@ -18,6 +18,7 @@ return {
 
     require("ufo").setup({
       provider_selector = function(bufnr, filetype, buftype)
+        -- Return exactly two providers: "lsp" as the main provider, "indent" as the fallback
         return { "lsp", "indent" }
       end,
     })
