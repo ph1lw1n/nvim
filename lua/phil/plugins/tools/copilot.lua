@@ -8,6 +8,18 @@ return {
       'copilot#Accept("<CR>")',
       { silent = true, expr = true, script = true }
     )
+    vim.api.nvim_set_keymap(
+      "i",
+      "<C-n>",
+      "copilot#Next()",
+      { silent = true, expr = true, script = true }
+    )
+    vim.api.nvim_set_keymap(
+      "i",
+      "<C-p>",
+      "copilot#Previous()",
+      { silent = true, expr = true, script = true }
+    )
     vim.g.copilot_enabled = true
   end,
 }
