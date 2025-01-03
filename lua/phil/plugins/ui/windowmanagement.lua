@@ -2,19 +2,16 @@
 return {
   -- Windows.nvim plugin for split window adjustments
   {
-    "anuvyklack/windows.nvim",
-    dependencies = {
-      "anuvyklack/middleclass",
-      "anuvyklack/animation.nvim",
-    },
+    "nvim-focus/focus.nvim",
     config = function()
-      -- Set window-related options
-      vim.o.winwidth = 10
-      vim.o.winminwidth = 10
-      vim.o.equalalways = false
-
-      -- Setup the plugin
-      require("windows").setup()
+      require("focus").setup({
+        enable = true, -- Enable Focus functionality
+        autoresize = {
+          enable = true, -- Enable automatic resizing
+          excluded_filetypes = { "NvimTree", "alpha", "dashboard" }, -- Exclude specific filetypes
+          excluded_buftypes = { "nofile", "terminal" }, -- Exclude specific buffer types
+        },
+      })
     end,
   },
 

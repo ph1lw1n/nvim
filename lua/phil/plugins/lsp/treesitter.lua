@@ -38,6 +38,7 @@ return {
         "query",
         "vimdoc",
         "c",
+        "regex",
       },
 
       -- Enable incremental selection
