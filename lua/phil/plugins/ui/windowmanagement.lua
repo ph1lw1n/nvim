@@ -1,6 +1,5 @@
 -- Split window management and maximization
 return {
-  -- Windows.nvim plugin for split window adjustments
   {
     "nvim-focus/focus.nvim",
     config = function()
