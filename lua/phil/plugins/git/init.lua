@@ -1,4 +1,11 @@
 return {
-  "tpope/vim-fugitive", -- Powerful Git integration for Vim
-  "tpope/vim-rhubarb", -- GitHub integration for vim-fugitive
+  {
+    "tpope/vim-fugitive",
+    cmd = { "Git", "Gdiffsplit", "Gvdiffsplit", "Gwrite", "Gread", "Gstatus", "Gpush", "Gpull" },
+  },
+  {
+    "tpope/vim-rhubarb",
+    dependencies = { "tpope/vim-fugitive" },
+    cmd = { "Git", "Gdiffsplit", "Gvdiffsplit", "Gwrite", "Gread", "Gstatus", "Gpush", "Gpull" },
+  },
 }
