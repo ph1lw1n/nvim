@@ -1,9 +1,10 @@
 return {
   "mfussenegger/nvim-dap",
+  event = "CmdUndefined dap*", -- Load when any `dap` command is invoked
   dependencies = {
     -- Creates a beautiful Debugger UI
     "rcarriga/nvim-dap-ui",
-    'nvim-neotest/nvim-nio', -- Required dependency for dap-ui
+    "nvim-neotest/nvim-nio", -- Required dependency for dap-ui
 
     -- Mason and Debug Adapter Installers
     "williamboman/mason.nvim",

@@ -2,6 +2,7 @@
 return {
   {
     "nvim-focus/focus.nvim",
+    event = { "WinNew", "BufWinEnter" }, -- Load when a new window is created or entered
     config = function()
       require("focus").setup({
         enable = true, -- Enable Focus functionality

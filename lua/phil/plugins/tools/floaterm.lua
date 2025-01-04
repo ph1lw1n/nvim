@@ -1,5 +1,6 @@
 return {
   "voldikss/vim-floaterm",
+  event = "VeryLazy",
   config = function()
     -- Global settings for Floaterm
     vim.g.floaterm_width = 0.8 -- Set width as 80% of screen

@@ -1,6 +1,7 @@
 -- Set lualine as statusline
 return {
   'nvim-lualine/lualine.nvim',
+  event = "VeryLazy",
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status")

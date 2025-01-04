@@ -1,5 +1,6 @@
 return {
   "leath-dub/snipe.nvim",
+  event = "BufWinEnter",
   keys = {
     {
       "<leader><leader>",
