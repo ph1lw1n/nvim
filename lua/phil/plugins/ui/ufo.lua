@@ -20,7 +20,7 @@ return {
     require("ufo").setup({
       provider_selector = function(bufnr, filetype, buftype)
         -- Return exactly two providers: "lsp" as the main provider, "indent" as the fallback
-        return { "lsp", "indent" }
+        return { "treesitter", "indent" }
       end,
     })
   end,
