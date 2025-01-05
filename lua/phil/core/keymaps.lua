@@ -70,7 +70,7 @@ keymap.set("n", "<leader>ss", "<C-w>v", { desc = "[S]plitsplit" }) -- split wind
 keymap.set("n", "<leader>sd", "<C-w>s", { desc = "[D]ownsplit" }) -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "[E]qual" })
 keymap.set("n", "<leader>sx", ":close<CR>", { desc = "[x]Close" })
-keymap.set("n", "<leader>sa", "<Cmd>only<CR>", { desc = "[a]ll close" })
+keymap.set("n", "<leader>sa", "<Cmd>only<CR>", { desc = "[A]ll close" })
 
 
 -- Select all
