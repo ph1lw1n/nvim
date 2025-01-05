@@ -61,6 +61,7 @@ return {
 
     keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]iles (cwd)" })
     keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "[R]ecent" })
+    keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[H]elp" })
     keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[G]rep (cwd)" })
     keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "under [C]ursor (cwd)" })
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "[T]odos" })

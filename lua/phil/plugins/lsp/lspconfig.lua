@@ -22,27 +22,24 @@ return {
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         local opts = { buffer = ev.buf, silent = true }
 
-        -- set keybinds
+        -- KEYBINDS
         opts.desc = "Show LSP references"
-        keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+        keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 
-        -- Go to Declaration (gD)
         opts.desc = "Go to declaration in vertical split"
         keymap.set("n", "gD", function()
-          vim.cmd("vsplit") -- Open a vertical split
-          vim.lsp.buf.declaration() -- Go to declaration
+          vim.cmd("vsplit")
+          vim.lsp.buf.declaration()
         end, opts)
 
-        -- Go to Definition (gd)
         opts.desc = "Go to definition in vertical split"
         keymap.set("n", "gd", function()
-          vim.cmd("vsplit") -- Open a vertical split
-          vim.lsp.buf.definition() -- Go to definition
+          vim.cmd("vsplit")
+          vim.lsp.buf.definition()
         end, opts)
 
         -- opts.desc = "Go to declaration"
         -- keymap.set("n", "gD", vim.lsp.buf.declaration, opts) --This is not Goto Definition, this is Goto Declaration. In C this would take you to the header.
-        --
         -- opts.desc = "Show LSP definitions"
         -- keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
@@ -78,41 +75,50 @@ return {
       end,
     })
 
-    -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
     -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+    -- Enable autocompletion for all LSP servers
+    local capabilities = cmp_nvim_lsp.default_capabilities()
+
+    -- Setup handlers for LSP servers:
     mason_lspconfig.setup_handlers({
+      -- Default handler for servers without specific configs:
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,
         })
       end,
-      lspconfig["clangd"].setup({
-        cmd = { "clangd", "--offset-encoding=utf-8", "--background-index" },
-        capabilities = capabilities,
-        filetypes = { "c", "cpp", "objc", "objcpp" },
-        root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
-      }),
-      ["pyright"] = function()
-        lspconfig["pyright"].setup({
+
+      -- Specific handler for clangd
+      ["clangd"] = function()
+        lspconfig["clangd"].setup({
+          cmd = { "clangd", "--offset-encoding=utf-8", "--background-index" },
           capabilities = capabilities,
-          settings = {
-            python = {
-              analysis = {
-                typeCheckingMode = "basic", -- Optional: Adjust type checking
-              },
-            },
-          },
+          filetypes = { "c", "cpp", "objc", "objcpp" },
+          root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
         })
       end,
+
+      -- -- Specific handler for pyright
+      -- ["pyright"] = function()
+      --   lspconfig["pyright"].setup({
+      --     capabilities = capabilities,
+      --     settings = {
+      --       python = {
+      --         analysis = {
+      --           typeCheckingMode = "basic", -- Optional: Adjust type checking
+      --         },
+      --       },
+      --     },
+      --   })
+      -- end,
+
+      -- Specific handler for lua
       ["lua_ls"] = function()
         lspconfig["lua_ls"].setup({
           capabilities = capabilities,

@@ -46,7 +46,7 @@ return {
         ["<c-b>"] = cmp.mapping.scroll_docs(-4), -- scroll up in documentation
         ["<c-f>"] = cmp.mapping.scroll_docs(4), -- scroll down in documentation
         ["<c-space>"] = cmp.mapping.complete(), -- show completion suggestions
-        ["<c-e>"] = cmp.mapping.abort(), -- close completion window
+        ["<c-x>"] = cmp.mapping.abort(), -- close completion window
         ["<cr>"] = cmp.mapping.confirm({ select = false }), -- confirm selection
         -- ["<tab>"] = cmp.mapping(function(fallback)
         --   if cmp.visible() then
@@ -78,6 +78,14 @@ return {
           maxwidth = 50,
           ellipsis_char = "...", -- ellipsis for truncated text
         }),
+      },
+    })
+
+    -- Restrict completion sources for C files
+    cmp.setup.filetype("c", {
+      sources = {
+        { name = "buffer" }, -- Only suggest text from the current buffer
+        { name = "path" }, -- Suggestions from the filesystem paths
       },
     })
   end,
