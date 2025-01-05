@@ -83,6 +83,7 @@ return {
 
     -- Restrict completion sources for C files
     cmp.setup.filetype("c", {
+      enabled = false,
       sources = {
         { name = "buffer" }, -- Only suggest text from the current buffer
         { name = "path" }, -- Suggestions from the filesystem paths
