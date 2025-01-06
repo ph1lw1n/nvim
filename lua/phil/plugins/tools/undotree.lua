@@ -1,7 +1,15 @@
 return {
   "mbbill/undotree",
-  event = "VeryLazy",
+  cmd = "UndotreeToggle",
+  keys = {
+    {
+      "<leader>u",
+      "<cmd>UndotreeToggle<CR>",
+      desc = "[U]ndoTree",
+    },
+  },
   config = function()
-    vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>", { desc = "[U]ndoTree" })
+    vim.g.undotree_WindowLayout = 2
+    vim.g.undotree_SplitWidth = 35
   end,
 }
