@@ -1,7 +1,15 @@
 return {
   "AckslD/nvim-neoclip.lua",
+  event = "TextYankPost",
   dependencies = {
     { "nvim-telescope/telescope.nvim" },
+  },
+  keys = {
+    {
+      "<leader>n",
+      "<cmd>Telescope neoclip<CR>",
+      desc = "[N]eoclip",
+    },
   },
   config = function()
     require("neoclip").setup({
@@ -60,7 +68,7 @@ return {
         },
       },
     })
-
-    vim.keymap.set("n", "<leader>n", "<cmd>Telescope neoclip<CR>", { desc = "[N]eoclip" })
+    -- Load the extension:
+    require("telescope").load_extension("neoclip")
   end,
 }

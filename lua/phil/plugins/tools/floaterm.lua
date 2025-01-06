@@ -1,16 +1,28 @@
 return {
   "voldikss/vim-floaterm",
-  event = "VeryLazy",
+  -- Remove event, and use `keys` instead:
+  keys = {
+    -- Normal mode mapping
+    {
+      "T",
+      "<cmd>FloatermToggle floaterm1<CR>",
+      mode = "n",
+      desc = "[T]erminal",
+    },
+    -- Terminal mode mapping
+    {
+      "T",
+      "<cmd>FloatermToggle floaterm1<CR>",
+      mode = "t",
+      desc = "[T]erminal",
+    },
+  },
   config = function()
     -- Global settings for Floaterm
-    vim.g.floaterm_width = 0.8 -- Set width as 80% of screen
-    vim.g.floaterm_height = 0.7 -- Set height as 70% of screen
-    vim.g.floaterm_wintype = "float" -- Use floating window
-    vim.g.floaterm_position = "center" -- Center the terminal
-    vim.g.floaterm_autoclose = 2 -- Close terminal when process exits
-
-    -- Keybindings
-    vim.keymap.set("n", "T", "<cmd>FloatermToggle floaterm1<CR>", { desc = "[T]erminal" })
-    vim.keymap.set("t", "T", "<cmd>FloatermToggle floaterm1<CR>", { desc = "[T]erminal" }) -- might comment out for writing a "T"
+    vim.g.floaterm_width = 0.8
+    vim.g.floaterm_height = 0.7
+    vim.g.floaterm_wintype = "float"
+    vim.g.floaterm_position = "center"
+    vim.g.floaterm_autoclose = 2
   end,
 }
