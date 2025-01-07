@@ -15,6 +15,67 @@ return {
     -- "leoluz/nvim-dap-go",
     -- "mfussenegger/nvim-dap-python",
   },
+  keys = {
+    {
+      "<leader>dd",
+      function()
+        require("lazy").load({ plugins = { "nvim-dap" } })
+        require("dap").continue()
+      end,
+      desc = "Start/Continue",
+    },
+    {
+      "<leader>di",
+      function()
+        require("lazy").load({ plugins = { "nvim-dap" } })
+        require("dap").step_into()
+      end,
+      desc = "Step Into",
+    },
+    {
+      "<leader>do",
+      function()
+        require("lazy").load({ plugins = { "nvim-dap" } })
+        require("dap").step_over()
+      end,
+      desc = "Step Over",
+    },
+    {
+      "<leader>dx",
+      function()
+        require("lazy").load({ plugins = { "nvim-dap" } })
+        require("dap").step_out()
+      end,
+      desc = "Step Out",
+    },
+    {
+      "<leader>db",
+      function()
+        require("lazy").load({ plugins = { "nvim-dap" } })
+        require("dap").toggle_breakpoint()
+      end,
+      desc = "Toggle Breakpoint",
+    },
+    {
+      "<leader>dB",
+      function()
+        require("lazy").load({ plugins = { "nvim-dap" } })
+        local cond = vim.fn.input("Breakpoint condition: ")
+        require("dap").set_breakpoint(cond)
+      end,
+      desc = "Set Breakpoint (cond)",
+    },
+    {
+      "<leader>du",
+      function()
+        require("lazy").load({ plugins = { "nvim-dap" } })
+        require("dapui").toggle()
+        vim.cmd("FocusToggle")
+      end,
+      desc = "Toggle UI",
+    },
+  },
+
   config = function()
     local dap = require("dap")
     local dapui = require("dapui")
@@ -25,24 +86,13 @@ return {
       automatic_installation = true,
       ensure_installed = {
         "codelldb", -- C/C++
-        "gdb", -- C/C++
+        -- "gdb", -- C/C++
         -- "lldb-vscode", -- C/C++
         -- "gopls", -- Go
         -- "debugpy", -- Python
         -- Add more debuggers here
       },
     })
-
-    -- Debugger keymaps
-    vim.keymap.set("n", "<F5>", dap.continue, { desc = "Debug: Start/Continue" })
-    vim.keymap.set("n", "<F1>", dap.step_into, { desc = "Debug: Step Into" })
-    vim.keymap.set("n", "<F2>", dap.step_over, { desc = "Debug: Step Over" })
-    vim.keymap.set("n", "<F3>", dap.step_out, { desc = "Debug: Step Out" })
-    vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
-    vim.keymap.set("n", "<leader>dB", function()
-      dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-    end, { desc = "Debug: Set Breakpoint" })
-    vim.keymap.set("n", "<F7>", dapui.toggle, { desc = "Debug: Toggle Debugger UI" })
 
     -- DAP UI setup
     dapui.setup({

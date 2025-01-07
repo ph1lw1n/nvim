@@ -10,6 +10,12 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     nvimtree.setup({
+      -- uncomment for changing pwd automatically
+      -- update_focused_file = {
+      --   enable = true,
+      --   update_cwd = true,
+      --   -- optional: ignore_list = { ".git", "node_modules", ".cache" },
+      -- },
       view = {
         width = 35,
         -- relativenumber = true,
