@@ -9,6 +9,11 @@ return {
       sidebars = "transparent", -- Sidebar style transparent / dark
       floats = "transparent", -- Floating window style
     },
+    -- on_highlights = function(hl, c) -- highlight column 80
+    --   hl.ColorColumn = {
+    --     bg = c.dark5,
+    --   }
+    -- end,
   },
   config = function(_, opts)
     -- Pass the options to the plugin setup

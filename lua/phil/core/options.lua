@@ -18,6 +18,9 @@ opt.wrap = false
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
+-- Set the colorcolumn
+opt.colorcolumn = "80"
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 opt.mouse = "a"
 
