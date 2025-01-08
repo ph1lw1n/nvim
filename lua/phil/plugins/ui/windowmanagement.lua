@@ -17,6 +17,7 @@ return {
             "dapui_stacks",
             "dapui_watches",
             "dapui_breakpoints",
+            "dapui_console",
             "dap-repl",
           }, -- Exclude the list of filetypes from automatic resizing
           excluded_buftypes = { "nofile", "terminal", "prompt" }, -- Exclude specific buffer types
