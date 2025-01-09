@@ -26,7 +26,7 @@ return {
 
     -- Mini Indentscope
     vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "dashboard", "alpha", "help", "startify", "NvimTree", "floaterm", "Trouble" },
+      pattern = { "dashboard", "alpha", "make", "help", "startify", "NvimTree", "floaterm", "Trouble" },
       callback = function()
         vim.b.miniindentscope_disable = true
       end,
