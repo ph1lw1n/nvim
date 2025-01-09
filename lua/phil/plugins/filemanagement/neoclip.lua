@@ -21,23 +21,24 @@ return {
       filter = nil,
       preview = true,
       prompt = nil,
-      default_register = '"',
-      default_register_macros = "q",
+      default_register = { '"', "+", "*" }, -- Include system clipboard registers
+      ros = "q",
       enable_macro_history = true,
       content_spec_column = false,
       disable_keycodes_parsing = false,
       on_select = {
-        move_to_front = false,
+        set_reg = true, -- Ensure the selected entry is set to the register
+        move_to_front = true,
         close_telescope = true,
       },
       on_paste = {
-        set_reg = false,
-        move_to_front = false,
+        set_reg = true,
+        move_to_front = true,
         close_telescope = true,
       },
       on_replay = {
-        set_reg = false,
-        move_to_front = false,
+        set_reg = true,
+        move_to_front = true,
         close_telescope = true,
       },
       on_custom_action = {
