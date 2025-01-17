@@ -3,6 +3,8 @@ return {
   version = false, -- Always use the latest version
   config = function()
     -- ----------------------------------------------------------------------------
+    -- Mini bracketed
+    require("mini.bracketed").setup()
 
     -- Highlight patterns in text
     require("mini.hipatterns").setup()
@@ -26,7 +28,16 @@ return {
 
     -- Mini Indentscope
     vim.api.nvim_create_autocmd("FileType", {
-      pattern = { "dashboard", "alpha", "make", "help", "startify", "NvimTree", "floaterm", "Trouble" },
+      pattern = {
+        "dashboard",
+        "alpha",
+        "make",
+        "help",
+        "startify",
+        "NvimTree",
+        "floaterm",
+        "Trouble",
+      },
       callback = function()
         vim.b.miniindentscope_disable = true
       end,
